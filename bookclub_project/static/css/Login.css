@@ -1,0 +1,141 @@
+  /* Same styles as Register Page above */
+  * {
+    box-sizing: border-box;
+  }
+
+  .body_one {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .register-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    width: 360px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    position: relative;
+    z-index: 10;
+  }
+
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 1.8rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px solid #00ffff90;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input.error {
+    border-color: #ff0000;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    background-color: #1a1a1a;
+    padding: 0 6px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group input:not(:placeholder-shown) {
+    border-color: #00ffff;
+  }
+
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #00ffff;
+  }
+
+  .register-btn {
+    width: 100%;
+    padding: 12px;
+    background: #00ffff;
+    border: none;
+    border-radius: 8px;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00ffff80;
+    transition: all 0.3s ease;
+  }
+
+  .register-btn:hover {
+    background: #0ff;
+    transform: scale(1.02);
+    box-shadow: 0 0 12px #00ffffa0;
+  }
+
+  .glow-ring {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(0,255,255,0.2), transparent 70%);
+    animation: pulse 3s infinite;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.05); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0.4; }
+  }
+
+  /* Particle Animation */
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: #00ffff;
+    animation: float 3s infinite linear;
+    opacity: 0.7;
+  }
+
+  @keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100vw, 100vh); }
+  }

@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block title %}
+    Clubs
+{% endblock %}
+{% block link %}
+    {{block.super}}
+    <link rel="stylesheet" href="{% static 'css/my_club.css' %}">
+{% endblock %}
+{% block body %}
+    {% block content %}
+        
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+{% endblock %}

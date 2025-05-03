@@ -1,0 +1,96 @@
+{% extends 'home_layout.html' %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+    <header class="navbar">
+        <div class="logo">📚 BookClub</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'users:index' %}">Home</a></li>
+                <li><a href="{% url 'users:index' %}#explore-clubs">Clubs</a></li>
+                {% if user.is_authenticated %}
+                <li> <a href="{% url 'users:my_club' %}">My Club</a></li>
+                <li> <a href="{% url 'users:settings' %}">Settings</a></li>
+                {% else %}
+                    <li><a href="{% url 'users:login_view' %}">Login</a></li>
+                    <li><a href="{% url 'users:register_view' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+
+    {% block content %}
+    <main class="main-content">
+        <section class="hero" id="explore-clubs">
+            <h1>Welcome to BookClub</h1>
+            <p>Discover, read, and connect through your favorite books. Join communities and grow your bookshelf!</p>
+            <a href="#" class="btn-primary">Explore Clubs</a>
+        </section>
+
+        <div class="content-grid">
+            <section class="features">
+                <a href="">
+                    <div class="feature-card">
+                        <h3>📖 Create or Join Clubs</h3>
+                        <p>Start your own club or explore thousands of reader communities worldwide.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="feature-card">
+                        <h3>📈 Track Your Progress</h3>
+                        <p>Update your reading log, share reviews, and stay on top of your goals.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="feature-card">
+                        <h3>💬 Chapter Discussions</h3>
+                        <p>Talk about each chapter in real time with your clubmates.</p>
+                    </div>
+                </a>
+            </section>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Featured Books</h3>
+                    <ul>
+                        <li>The Great Gatsby</li>
+                        <li>1984</li>
+                        <li>To Kill a Mockingbird</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    {% endblock %}
+
+    {% block footer %}
+    <footer class="footer">
+        <p>&copy; 2025 BookClub. All rights reserved.</p>
+    </footer>
+    {% endblock %}
+    
+    {% block script %}
+    <script>
+        // Smooth Scroll to Sections (if needed)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    {% endblock %}
+{% endblock %}
