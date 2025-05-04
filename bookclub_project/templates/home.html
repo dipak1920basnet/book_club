@@ -18,11 +18,16 @@
                 <li><a href="{% url 'users:index' %}">Home</a></li>
                 <li><a href="{% url 'users:index' %}#explore-clubs">Clubs</a></li>
                 {% if user.is_authenticated %}
+
                 <li> <a href="{% url 'users:my_club' %}">My Club</a></li>
                 <li> <a href="{% url 'users:settings' %}">Settings</a></li>
+                <li> <a href="{% url 'users:logout' %}">Log Out</a></li>
+
                 {% else %}
+
                     <li><a href="{% url 'users:login_view' %}">Login</a></li>
                     <li><a href="{% url 'users:register_view' %}">Register</a></li>
+                    
                 {% endif %}
             </ul>
         </nav>
@@ -32,7 +37,7 @@
     {% block content %}
     <main class="main-content">
         <section class="hero" id="explore-clubs">
-            <h1>Welcome to BookClub</h1>
+            <h1>Welcome to BookClub {{username}}</h1>
             <p>Discover, read, and connect through your favorite books. Join communities and grow your bookshelf!</p>
             <a href="#" class="btn-primary">Explore Clubs</a>
         </section>
