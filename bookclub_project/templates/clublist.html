@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block link %}
+  {{block.super}}
+    <link rel="stylesheet" href="{% static 'css/clublist.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="clubs-list">
+        <h2>Explore Clubs</h2>
+        <input type="text" id="search-bar" placeholder="Search clubs..." class="search-bar">
+        <div id="clubs-container">
+            <!-- Club Cards will be displayed here dynamically -->
+            {% for club in clublist %}
+               <div class="club">
+                    <h1>{{club.name}}</h1>
+                    <button>JoinClub</button>
+               </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

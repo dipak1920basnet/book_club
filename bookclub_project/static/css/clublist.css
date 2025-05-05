@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar:focus {
+    background-color: #333;
+    border-color: #44d8ff;
+}
+
+/* Clubs List */
+.clubs-list {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Club Cards */
+.club-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.club-card:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.club-card h3 {
+    font-size: 22px;
+    color: #44d8ff;
+    margin-bottom: 10px;
+}
+
+.club-card p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.club-card .join-btn {
+    padding: 10px 20px;
+    background-color: #44d8ff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.club-card .join-btn:hover {
+    background-color: #38c1d1;
+}
+
+.club-card .join-btn:active {
+    transform: scale(0.98);
+}
+
+/* Background Dark Theme */
+.background-dark {
+    background-color: #121212;
+    color: white;
+    transition: background-color 0.3s ease;
+}

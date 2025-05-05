@@ -16,10 +16,10 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="{% url 'users:index' %}">Home</a></li>
-                <li><a href="{% url 'users:index' %}#explore-clubs">Clubs</a></li>
+                <li><a href="{% url 'clubs:clublist' %}#explore-clubs">Clubs</a></li>
                 {% if user.is_authenticated %}
 
-                <li> <a href="{% url 'users:my_club' %}">My Club</a></li>
+                <li> <a href="{% url 'clubs:my_club' %}">My Club</a></li>
                 <li> <a href="{% url 'users:settings' %}">Settings</a></li>
                 <li> <a href="{% url 'users:logout' %}">Log Out</a></li>
 
@@ -37,16 +37,20 @@
     {% block content %}
     <main class="main-content">
         <section class="hero" id="explore-clubs">
-            <h1>Welcome to BookClub {{username}}</h1>
+            {% if username %}
+                <h1>Welcome to BookClub {{username}}</h1>
+            {% else %}
+                <h1>Welcome to BookClub</h1>
+            {% endif %}
             <p>Discover, read, and connect through your favorite books. Join communities and grow your bookshelf!</p>
             <a href="#" class="btn-primary">Explore Clubs</a>
         </section>
 
         <div class="content-grid">
             <section class="features">
-                <a href="">
+                <a href="{% url 'clubs:create_club' %}">
                     <div class="feature-card">
-                        <h3>📖 Create or Join Clubs</h3>
+                        <h3>📖 Create Your own Club</h3>
                         <p>Start your own club or explore thousands of reader communities worldwide.</p>
                     </div>
                 </a>

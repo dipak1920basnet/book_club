@@ -88,7 +88,8 @@ def my_club(request):
 
 @login_required
 def settings(request):
-    return render(request, "settings.html")
+    return render(request, "settings.html",
+                  {"message":"Feature arriving soon"})
 
 # @login_required
 def Logout(request):

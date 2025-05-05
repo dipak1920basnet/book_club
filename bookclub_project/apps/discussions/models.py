@@ -5,7 +5,7 @@ from apps.users.models import Users
 from apps.books.models import  ClubBook
 
 class Comment(models.Model):
-    user = models.ForeignKey(on_delete=models.CASCADE)
+    user = models.ForeignKey(Users,on_delete=models.CASCADE, related_name="commenter")
     club_book = models.ForeignKey(ClubBook, on_delete=models.CASCADE)
     chapter = models.IntegerField()
     text = models.CharField(max_length=600)

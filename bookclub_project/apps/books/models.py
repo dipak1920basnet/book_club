@@ -14,7 +14,7 @@ class Book(models.Model):
     author = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, blank=True)
     # Even though user delets account The books should not be deleted 
     # might considering changing models.cascade
-    name_copy = models.CharField()
+    name_copy = models.CharField(max_length=400)
 
     def save(self, *args, **kwargs):
         if self.author:
